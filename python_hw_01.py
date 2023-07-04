@@ -42,8 +42,19 @@ def calculator(first_user_input: int, second_user_input: int, operation: str) ->
 
 if __name__ == "__main__":
     print("Welcome to the Calculator Program!\n")
-    first_user_input = int(input("Please enter the first number: "))
-    second_user_input = int(input("Please enter the second number: "))
+    while True:
+        try:
+            first_user_input = int(input("Please enter the first number: "))
+            break
+        except ValueError:
+            print("That's not a valid number, please try again.")
+
+    while True:
+        try:
+            second_user_input = int(input("Please enter the second number: "))
+            break
+        except ValueError:
+            print("That's not a valid number, please try again.")
     print("\nPlease select an operation:")
 
     for number, operation in operations.items():
