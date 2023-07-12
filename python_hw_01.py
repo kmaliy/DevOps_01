@@ -29,15 +29,17 @@ def calculator(first_user_input: int, second_user_input: int, operation: str) ->
         ValueError: If operation is not one of '1', '2', '3', or '4'.
     """
     if operation == "1":
-        calculation_output = first_user_input + second_user_input
+        return print(first_user_input + second_user_input)
     elif operation == "2":
-        calculation_output = first_user_input - second_user_input
+        return print(first_user_input - second_user_input)
     elif operation == "3":
-        calculation_output = first_user_input * second_user_input
+        return print(first_user_input * second_user_input)
     elif operation == "4":
-        calculation_output = first_user_input / second_user_input
-
-    return print(calculation_output)
+        if second_user_input == 0:
+            raise ZeroDivisionError("Error: Division by zero is not allowed.")
+        return print(first_user_input / second_user_input)
+    else:
+        raise ValueError("Invalid operation.")
 
 
 if __name__ == "__main__":
